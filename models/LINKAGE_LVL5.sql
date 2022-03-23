@@ -1,7 +1,7 @@
 {{ config(materialized='table', sort='PARENT,CHILD') }}
 
 SELECT 
-{{column_list(5)}}
+{{column_list(4)}}
 FROM 
 {{ref('LINKAGE_LVL4')}} A
 INNER JOIN
