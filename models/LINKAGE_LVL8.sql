@@ -1,8 +1,10 @@
 {{ config(materialized='table', sort='PARENT,CHILD') }}
 
 SELECT 
-{{column_list(-1)}}
+{{column_list(7)}}
 FROM 
+{{ref('LINKAGE_LVL7')}} A
+INNER JOIN
 PUBLIC.LINK_HIER B
-WHERE
-B.HAVE_PARENT=0
+ON
+A.LVL7=B.PARENT
